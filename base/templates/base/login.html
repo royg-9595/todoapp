@@ -1,0 +1,16 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<a href='{%url 'tasks'%}'><h3>Home</h3></a>
+<hr>
+
+<h3> Login</h3> 
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Login">
+</form>
+
+<p> <a href="{% url 'register'%}">Creat your account ..!</a></p>
+
+{% endblock content %}
